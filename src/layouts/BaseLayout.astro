@@ -1,0 +1,24 @@
+---
+/*
+  Props = données qu'une page peut envoyer au layout.
+  Ici : title et description avec valeurs par défaut.
+*/
+
+import Header from "../components/Header.astro"
+const { title = "Portfolio", description = "Développeuse conceptrice d’applications" } = Astro.props;
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body style="font-family: system-ui, sans-serif; margin: 0;">
+    <main style="max-width: 720px; margin: 3rem auto; padding: 0 1rem;">
+      <slot />
+      <!-- <slot /> = endroit où le contenu spécifique de chaque page est injecté -->
+    </main>
+  </body>
+</html>
