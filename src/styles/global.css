@@ -1,0 +1,14 @@
+@tailwind base; 
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+  --font-sans: 'Noto Sans JP', system-ui, -apple-system, sans-serif;
+}
+
+
+html {
+    font-family: var(--font-sans);
+}
