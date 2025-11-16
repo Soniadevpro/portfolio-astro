@@ -1,9 +1,89 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const title = "Sabbahi Sonia — Portfolio";
+const description = "Développeuse conceptrice d'applications spécialisée en JavaScript, React, Astro et Python.";
 ---
 
-<BaseLayout title="Sonia Sabbahi — Portfolio" description="Développeuse conceptrice d’applications (React, Django, JS, Python)">
-  <h1 style="font-size: 2rem; font-weight: 700; margin-bottom: .5rem;">Bienvenue sur mon portfolio</h1>
-  <p style="opacity:.8;">Je conçois des applications modernes, performantes et minimalistes.</p>
+
+<BaseLayout {title} {description}>
+
+  <!-- HERO -->
+<!-- HERO -->
+<section class="py-20 text-center animate-fade-up">
+  <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+    Bonjour, je suis <span class="text-vermillion dark:text-indigo-300">Sonia</span>
+👋
+  </h1>
+
+  <p class="text-lg opacity-80 max-w-2xl mx-auto leading-relaxed">
+    Développeuse conceptrice d’applications, spécialisée en JavaScript, React, Python et création d’expériences modernes avec Astro.
+  </p>
+
+  <div class="mt-10 flex justify-center gap-4">
+ <a 
+  href="/projets" 
+  class="px-7 py-3 rounded-lg bg-vermillion text-white font-medium shadow-sm hover:shadow-md hover:bg-rose-600 transition"
+>
+  Voir mes projets
+</a>
+
+
+    <a 
+      href="/contact"
+      class="px-7 py-3 rounded-lg border border-neutral-400/60 dark:border-neutral-700/60 font-medium hover:bg-neutral-200 dark:hover:bg-neutral-800 transition"
+    >
+      Me contacter
+    </a>
+  </div>
+</section>
+
+
+
+
+<!-- COMPÉTENCES -->
+<section class="py-20 border-t border-neutral-300/40 dark:border-neutral-700/40">
+  <h2 class="text-3xl font-bold text-center mb-10 tracking-tight">Mes compétences</h2>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+
+    {["Astro", "React", "Tailwind CSS", "JavaScript", "Node.js", "Python", "SQL", "Django"].map(item => (
+     <div class="p-4 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-center font-medium shadow-sm hover:shadow-md transform hover:-translate-y-1 transition-all">
+  {item}
+</div>
+    ))}
+
+  </div>
+</section>
+
+
+
+
+<!-- PROJETS -->
+<section class="py-20 border-t border-neutral-300/40 dark:border-neutral-700/40">
+  <h2 class="text-3xl font-bold text-center mb-4">Mes projets</h2>
+
+  <p class="text-center opacity-70">
+    La section projets arrive bientôt… 🚧
+  </p>
+</section>
+
+
+
+  <!-- CONTACT -->
+
+<section class="py-20 border-t border-neutral-300/40 dark:border-neutral-700/40 text-center">
+  <h2 class="text-3xl font-bold mb-4">Envie de collaborer ?</h2>
+
+  <p class="opacity-80 mb-8">Disponible pour des missions freelance ou la création d’applications modernes.</p>
+
+  <a href="/contact"
+     class="px-8 py-4 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 shadow-sm transition">
+    Me contacter
+  </a>
+</section>
+
+
+
 </BaseLayout>
 

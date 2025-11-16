@@ -1,0 +1,17 @@
+---
+// Props envoyées par la page
+const { title, description, slug } = Astro.props;
+---
+
+<a 
+  href={`/projets/${slug}`} 
+  class="block border border-pink-200 rounded-lg p-4 hover:border-pink-400 hover:shadow-lg transition"
+>
+  <h2 class="text-xl font-bold mb-2 text-pink-600">
+    {title}
+  </h2>
+
+  <p class="text-gray-700 text-sm">
+    {description}
+  </p>
+</a>

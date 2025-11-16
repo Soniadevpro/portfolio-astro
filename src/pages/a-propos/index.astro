@@ -1,7 +1,25 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const title = "À propos — Sabbahi Sonia";
+const description = "En savoir plus sur mon parcours en développement et mes compétences.";
 ---
-<BaseLayout title="À propos — Sonia Sabbahi" description="Qui suis-je ?">
-  <h1>À propos</h1>
-  <p>Bio courte à venir.</p>
+
+<BaseLayout {title} {description}>
+
+  <section class="py-20 max-w-3xl mx-auto animate-fade-up">
+    <h1 class="text-4xl font-bold mb-6 text-center">À propos</h1>
+
+    <p class="opacity-80 leading-relaxed text-lg">
+      Je suis Sonia Sabbahi, développeuse conceptrice d’applications passionnée par
+      la création d’expériences web modernes, performantes et accessibles.
+    </p>
+
+    <p class="opacity-80 leading-relaxed mt-4">
+      J’aime travailler avec Astro, React, Python, Tailwind et développer des projets 
+      utiles, élégants et efficaces.
+    </p>
+  </section>
+
 </BaseLayout>
+

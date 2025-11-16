@@ -1,7 +1,25 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const title = "Contact — Sabbahi Sonia";
+const description = "Me contacter pour une mission, un projet ou un échange professionnel.";
 ---
-<BaseLayout title="Contact — Sonia Sabbahi" description="Me contacter">
-  <h1>Contact</h1>
-  <p>Un simple email pour l’instant : <a href="mailto:contact@example.com">contact@example.com</a></p>
+
+<BaseLayout {title} {description}>
+
+  <section class="py-20 max-w-xl mx-auto animate-fade-up">
+    <h1 class="text-4xl font-bold mb-6 text-center">Contact</h1>
+
+    <p class="opacity-80 text-center mb-8">
+      Vous pouvez me contacter via le formulaire ci-dessous (à venir) ou par email :
+    </p>
+
+    <p class="opacity-80 text-center font-medium text-lg">
+      <a href="mailto:sonia.sabbahi.dev@gmail.com" class="text-vermillion hover:underline">
+        sonia.sabbahi.dev@gmail.com
+      </a>
+    </p>
+  </section>
+
 </BaseLayout>
+

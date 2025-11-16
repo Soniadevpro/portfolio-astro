@@ -3,14 +3,49 @@
 
 
 
-<header class="flex items-center justify-between px-6 py-4 border-b border-neutral-300/40 backdrop-blur-sm bg-white/60">
+<header class="flex items-center justify-between px-6 py-4 border-b border-neutral-300/40 dark:border-neutral-800/60 backdrop-blur-sm bg-white/70 dark:bg-neutral-900/70">
   <a href="/" class="font-semibold tracking-wide">Sabbahi Sonia</a>
-  <nav class="flex gap-6 text-sm">
+
+  <nav class="flex items-center gap-4 text-sm">
     <a href="/" class="opacity-80 hover:opacity-100 transition-opacity">Accueil</a>
     <a href="/projets" class="opacity-80 hover:opacity-100 transition-opacity">Projets</a>
     <a href="/services" class="opacity-80 hover:opacity-100 transition-opacity">Services</a>
     <a href="/a-propos" class="opacity-80 hover:opacity-100 transition-opacity">À propos</a>
     <a href="/contact" class="opacity-80 hover:opacity-100 transition-opacity">Contact</a>
+
+    <button
+      id="theme-toggle"
+      class="ml-3 text-xs border border-neutral-300/70 dark:border-neutral-700 rounded-full px-3 py-1 opacity-80 hover:opacity-100 transition-all"
+      type="button"
+    >
+      🌙 / ☀️
+    </button>
   </nav>
+
+  <script>
+    const btn = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+
+    function setTheme(mode) {
+      if (mode === 'dark') {
+        root.classList.add('dark');
+      } else {
+        root.classList.remove('dark');
+      }
+      localStorage.setItem('theme', mode);
+    }
+
+    // État initial basé sur la classe actuelle
+    function getCurrentTheme() {
+      return root.classList.contains('dark') ? 'dark' : 'light';
+    }
+
+    btn?.addEventListener('click', () => {
+      const current = getCurrentTheme();
+      const next = current === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+    });
+  </script>
 </header>
+
 

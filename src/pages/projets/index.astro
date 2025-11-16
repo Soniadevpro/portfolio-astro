@@ -1,7 +1,25 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import ProjectCard from "../../components/ProjectCard.astro";
+
+const projets = await getCollection("projets");
 ---
-<BaseLayout title="Projets — Sonia Sabbahi" description="Mes projets récents">
-  <h1>Projets</h1>
-  <p>Liste à venir.</p>
+
+<BaseLayout title="Mes projets" description="Portfolio – projets récents">
+
+  <h1 class="text-3xl font-bold text-pink-600 mb-6">Mes projets</h1>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    {projets.map((projet) => (
+      <ProjectCard
+        title={projet.data.title}
+        description={projet.data.description}
+        slug={projet.slug}
+      />
+    ))}
+  </div>
+
 </BaseLayout>
+
+

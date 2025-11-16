@@ -1,0 +1,67 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+// Génère les URLs dynamiques : /projets/playzone, etc.
+export async function getStaticPaths() {
+  const projets = await getCollection("projets");
+  return projets.map((projet) => ({
+    params: { slug: projet.slug },
+    props: { projet },
+  }));
+}
+
+// Récupère les données du projet
+const { projet } = Astro.props;
+const { title, description, date, technologies, image, github, demo } = projet.data;
+
+// 🔥 Rendu ASTRO du markdown
+const { Content } = await projet.render();
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="py-16 max-w-4xl mx-auto animate-fade-up px-4">
+
+    <!-- Titre + sous-titre -->
+    <h1 class="text-4xl font-bold text-center mb-2">{title}</h1>
+    <p class="text-center text-gray-600 dark:text-gray-300 mb-8">Année : {date}</p>
+
+    <!-- Image -->
+    {image && (
+      <img src={image} alt={title} class="w-full rounded-xl shadow-md mx-auto mb-6" />
+    )}
+
+    <!-- Technologies -->
+    <div class="flex justify-center gap-2 mb-6">
+      {technologies.map((tech) => (
+        <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full">
+          {tech}
+        </span>
+      ))}
+    </div>
+
+    <!-- Boutons -->
+    <div class="flex justify-center gap-4 mb-12">
+      {github && (
+        <a href={github} target="_blank" class="px-6 py-2 bg-black text-white rounded-xl hover:bg-gray-800 dark:bg-white dark:text-black">
+          Voir le code
+        </a>
+      )}
+      {demo && (
+        <a href={demo} target="_blank" class="px-6 py-2 bg-pink-200 text-black rounded-xl dark:bg-pink-300">
+          Voir la démo
+        </a>
+      )}
+    </div>
+
+    <!-- 🔥 Contenu Markdown rendu -->
+    <div class="prose prose-neutral dark:prose-invert max-w-none">
+      <Content />
+    </div>
+
+  </section>
+</BaseLayout>
+
+
+
+

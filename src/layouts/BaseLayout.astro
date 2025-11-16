@@ -9,7 +9,12 @@ import "@styles/global.css";
 const { title = "Portfolio", description = "Développeuse conceptrice d’applications" } = Astro.props;
 ---
 
-<html lang="fr">
+<html 
+  lang="fr"
+  class="min-h-screen bg-sakura/40 text-ink dark:bg-ink dark:text-neutral-50"
+>
+
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,7 +26,8 @@ const { title = "Portfolio", description = "Développeuse conceptrice d’applic
 <meta name="font-display" content="swap" />
 
   </head>
- <body class="bg-neutral-50 text-neutral-900">
+ <body class="min-h-screen transition-colors duration-300">
+
   <Header />
   <main class="max-w-3xl mx-auto px-4 py-10">
     <slot />
