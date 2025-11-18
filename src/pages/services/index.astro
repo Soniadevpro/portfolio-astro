@@ -2,17 +2,85 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 const title = "Services — Sabbahi Sonia";
-const description = "Découvrez les services que je propose en tant que développeuse freelance.";
+const description = "Services proposés en développement d’applications web, interfaces modernes et outils métiers.";
 ---
 
 <BaseLayout {title} {description}>
+  <section class="py-16 md:py-24 max-w-4xl mx-auto px-4 space-y-16">
+    
+    <!-- TITRE -->
+    <div class="space-y-4 text-center">
+      <h1 class="text-4xl font-bold">Mes services</h1>
+      <p class="text-lg opacity-80 max-w-2xl mx-auto">
+        En tant que développeuse conceptrice d’applications, je conçois des outils modernes,
+        utiles et adaptés aux besoins réels du terrain.
+      </p>
+    </div>
 
-  <section class="py-20 max-w-3xl mx-auto animate-fade-up">
-    <h1 class="text-4xl font-bold mb-6 text-center">Services</h1>
+    <!-- SERVICES EN GRILLE -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Service 1 -->
+      <div class="p-6 rounded-xl bg-neutral-100 dark:bg-neutral-800 space-y-2 border border-neutral-300/40 dark:border-neutral-700/40">
+        <h2 class="text-xl font-semibold">Développement Front-end</h2>
+        <p class="opacity-80 text-sm">
+          Interfaces modernes, lisibles et responsives avec Astro, React
+          et Tailwind. Design minimaliste, fluide, orienté utilisateur.
+        </p>
+      </div>
 
-    <p class="opacity-70 text-center">
-      Une description détaillée de mes services arrivera très bientôt.
-    </p>
+      <!-- Service 2 -->
+      <div class="p-6 rounded-xl bg-neutral-100 dark:bg-neutral-800 space-y-2 border border-neutral-300/40 dark:border-neutral-700/40">
+        <h2 class="text-xl font-semibold">Développement Back-end</h2>
+        <p class="opacity-80 text-sm">
+          APIs, logique métier, sécurisation, Django, Python, Node.js.
+          Mise en place d’architectures claires et maintenables.
+        </p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="p-6 rounded-xl bg-neutral-100 dark:bg-neutral-800 space-y-2 border border-neutral-300/40 dark:border-neutral-700/40">
+        <h2 class="text-xl font-semibold">Applications métiers</h2>
+        <p class="opacity-80 text-sm">
+          Conception d’outils internes (planning, communication interne,
+          reporting…). Travail sur cahier des charges et besoins terrain.
+        </p>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="p-6 rounded-xl bg-neutral-100 dark:bg-neutral-800 space-y-2 border border-neutral-300/40 dark:border-neutral-700/40">
+        <h2 class="text-xl font-semibold">Création de sites sur mesure</h2>
+        <p class="opacity-80 text-sm">
+          Portfolio, site professionnel, landing page. Design basé sur ton identité.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- SECTION MÉTHODOLOGIE -->
+    <div class="space-y-4">
+      <h2 class="text-2xl font-semibold">Comment je travaille</h2>
+
+      <ul class="space-y-3 text-sm opacity-80">
+        <li>• Discussions et analyse des besoins</li>
+        <li>• Maquettes / wireframes si nécessaire</li>
+        <li>• Développement clair, organisé et documenté</li>
+        <li>• Tests + démonstrations régulières</li>
+        <li>• Livraison, support, amélioration continue</li>
+      </ul>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center space-y-3 pt-10">
+      <p class="opacity-80">Prête à échanger sur votre projet ?</p>
+      <a
+        href="/contact"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-vermillion text-white font-medium hover:bg-rose-600 transition"
+      >
+        Me contacter →
+      </a>
+    </div>
+
   </section>
-
 </BaseLayout>
+

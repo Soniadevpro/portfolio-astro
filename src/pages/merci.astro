@@ -1,0 +1,21 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const title = "Merci — Sabbahi Sonia";
+const description = "Votre message a bien été envoyé.";
+---
+
+<BaseLayout {title} {description}>
+  <section class="py-20 max-w-xl mx-auto px-4 text-center space-y-4">
+    <h1 class="text-3xl font-bold">Merci pour votre message 🌸</h1>
+    <p class="opacity-80">
+      J’ai bien reçu votre demande et je vous répondrai dès que possible.
+    </p>
+    <a
+      href="/"
+      class="inline-flex items-center px-6 py-2 rounded-full bg-vermillion text-white text-sm font-medium hover:bg-rose-600 transition-transform duration-200 hover:-translate-y-0.5"
+    >
+      Revenir à l’accueil
+    </a>
+  </section>
+</BaseLayout>
