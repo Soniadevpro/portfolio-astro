@@ -7,6 +7,7 @@ import Header from "@components/Header.astro";
 import "@styles/global.css";
 
 const { title = "Portfolio", description = "Développeuse conceptrice d’applications" } = Astro.props;
+const year = new Date().getFullYear();
 ---
 
 <html 
@@ -32,6 +33,68 @@ const { title = "Portfolio", description = "Développeuse conceptrice d’applic
   <main class="max-w-3xl mx-auto px-4 py-10">
     <slot />
   </main>
+
+
+  <footer class="mt-16 border-t border-neutral-200/70 dark:border-neutral-800/70 bg-neutral-50/60 dark:bg-neutral-950/60">
+  <div class="max-w-5xl mx-auto px-4 py-8 md:py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+
+    <!-- Bloc gauche : identité -->
+    <div class="space-y-1">
+      <p class="text-sm font-semibold tracking-wide uppercase opacity-80">
+        Sabbahi Sonia
+      </p>
+      <p class="text-sm opacity-70">
+        Conceptrice développeuse d’applications — Frontend & Backend
+      </p>
+      <p class="text-xs opacity-60">
+        Spécialisée en interfaces modernes, performantes et adaptées aux besoins métiers.
+      </p>
+    </div>
+
+    <!-- Bloc centre : navigation -->
+    <nav class="flex flex-wrap gap-3 text-sm justify-start md:justify-center">
+      <a href="/" class="opacity-80 hover:opacity-100 hover:text-vermillion transition">Accueil</a>
+      <span class="opacity-40">•</span>
+      <a href="/a-propos" class="opacity-80 hover:opacity-100 hover:text-vermillion transition">À propos</a>
+      <span class="opacity-40">•</span>
+      <a href="/projets" class="opacity-80 hover:opacity-100 hover:text-vermillion transition">Projets</a>
+      <span class="opacity-40">•</span>
+      <a href="/services" class="opacity-80 hover:opacity-100 hover:text-vermillion transition">Services</a>
+      <span class="opacity-40">•</span>
+      <a href="/contact" class="opacity-80 hover:opacity-100 hover:text-vermillion transition">Contact</a>
+    </nav>
+
+    <!-- Bloc droit : contact & dispo -->
+    <div class="space-y-2 text-sm md:text-right">
+      <p class="opacity-80">
+        Disponible pour des missions freelance à distance ou en Île-de-France.
+      </p>
+      <a
+        href="mailto:sonia.sabbahi.dev@gmail.com"
+        class="inline-flex items-center gap-2 text-sm font-medium text-vermillion hover:underline"
+      >
+        <span>sonia.sabbahi.dev@gmail.com</span>
+      </a>
+      <p class="text-[11px] opacity-60">
+        Réponse sous 24–48h ouvrées.
+      </p>
+    </div>
+  </div>
+
+  <!-- Ligne du bas -->
+  <div class="border-t border-neutral-200/60 dark:border-neutral-800/60">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs opacity-60">
+      <p>
+        © {year} Sabbahi Sonia. Tous droits réservés.
+      </p>
+      <p class="flex items-center gap-1">
+        <span class="text-[10px]">inspiré par le Japon</span>
+        <span>🌸</span>
+      </p>
+    </div>
+  </div>
+</footer>
+
 </body>
 
 </html>

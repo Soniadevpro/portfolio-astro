@@ -11,3 +11,44 @@
 html {
   font-family: var(--font-sans);
 }
+
+
+
+
+/* Bouton principal */
+.btn-main {
+  @apply inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium
+    bg-vermillion text-white
+    transition-transform transition-shadow duration-200
+    hover:-translate-y-0.5 hover:shadow-lg
+    focus:outline-none focus:ring-2 focus:ring-vermillion focus:ring-offset-2
+    dark:focus:ring-offset-neutral-900;
+}
+
+/* Carte “smooth” utilisée pour projets / services / blocs importants */
+.card-smooth {
+  @apply rounded-2xl border border-neutral-200/70 dark:border-neutral-800/70
+    bg-white/70 dark:bg-neutral-900/70
+    shadow-sm backdrop-blur
+    transition-transform transition-shadow duration-200
+    hover:-translate-y-1 hover:shadow-lg;
+}
+
+/* Liens avec soulignement fluide au hover */
+.link-soft-underline {
+  @apply relative inline-block;
+}
+
+.link-soft-underline::after {
+  content: "";
+  @apply absolute left-0 bottom-0 w-full h-[1px] bg-vermillion scale-x-0 origin-left;
+  transition: transform 180ms ease-out;
+  transform: scaleX(0);
+}
+
+.link-soft-underline:hover::after {
+  transform: scaleX(1);
+}
+
+
+
