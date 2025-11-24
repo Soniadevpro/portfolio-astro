@@ -1,89 +1,221 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
 
 const title = "Sabbahi Sonia — Portfolio";
 const description = "Développeuse conceptrice d'applications spécialisée en JavaScript, React, Astro et Python.";
----
 
+// Récupération des projets à partir de la content collection "projets"
+const rawProjets = await getCollection("projets");
+
+const projets = rawProjets
+  .sort((a, b) => {
+    const da = new Date(a.data.date);
+    const db = new Date(b.data.date);
+    return db.getTime() - da.getTime();
+  })
+  .slice(0, 3); // On affiche les 3 plus récents
+
+const skills = [
+  { label: "Astro", icon: "🪐" },
+  { label: "React", icon: "⚛️" },
+  { label: "Tailwind CSS", icon: "💨" },
+  { label: "JavaScript", icon: "🟨" },
+  { label: "Node.js", icon: "🟢" },
+  { label: "Python", icon: "🐍" },
+  { label: "SQL", icon: "💾" },
+  { label: "Django", icon: "🌿" },
+];
+---
 
 <BaseLayout {title} {description}>
 
   <!-- HERO -->
-<!-- HERO -->
-<section class="py-20 text-center animate-fade-up">
-  <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
-    Bonjour, je suis <span class="text-vermillion dark:text-indigo-300">Sonia</span>
-👋
-  </h1>
+  <section class="py-16 md:py-24 max-w-4xl mx-auto px-4 animate-fade-up">
+    <div class="hero-shell p-8 md:p-10">
+      <div class="grid gap-10 md:grid-cols-[3fr,2fr] items-center">
 
-  <p class="text-lg opacity-80 max-w-2xl mx-auto leading-relaxed">
-    Développeuse conceptrice d’applications, spécialisée en JavaScript, React, Python et création d’expériences modernes avec Astro.
-  </p>
+        <!-- Texte -->
+        <div class="space-y-6 relative z-10">
+          <p class="section-eyebrow">Développeuse conceptrice d’applications</p>
 
-  <div class="mt-10 flex justify-center gap-4">
- <a 
-  href="/projets" 
-  class="px-7 py-3 rounded-lg bg-vermillion text-white font-medium shadow-sm hover:shadow-md hover:bg-rose-600 transition"
->
-  Voir mes projets
-</a>
+          <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+            Bonjour, je suis <span class="text-vermillion dark:text-indigo-300">Sonia</span> 👋
+          </h1>
 
+          <p class="text-lg opacity-80 leading-relaxed">
+            Je conçois et développe des applications web, des outils métiers et des interfaces modernes
+            pour des besoins concrets : équipes terrain, projets internes et entrepreneurs.
+          </p>
 
-    <a 
-      href="/contact"
-      class="px-7 py-3 rounded-lg border border-neutral-400/60 dark:border-neutral-700/60 font-medium hover:bg-neutral-200 dark:hover:bg-neutral-800 transition"
-    >
-      Me contacter
-    </a>
-  </div>
-</section>
+          <p class="text-sm opacity-70">
+            Mon approche&nbsp;: comprendre le fonctionnement réel du terrain, traduire les besoins en
+            interfaces claires, et livrer des solutions maintenables côté technique.
+          </p>
 
+          <div class="flex flex-wrap gap-3 pt-2">
+            <span class="pill-accent">
+              Disponible pour des missions freelance
+            </span>
+          </div>
 
+          <div class="flex flex-wrap gap-3 pt-4">
+            <a href="/projets" class="btn-main text-sm">
+              Voir mes projets
+            </a>
 
+            <a
+              href="/contact"
+              class="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium border border-neutral-300/70 dark:border-neutral-700/70 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
+            >
+              Me contacter
+            </a>
+          </div>
+        </div>
 
-<!-- COMPÉTENCES -->
-<section class="py-20 border-t border-neutral-300/40 dark:border-neutral-700/40">
-  <h2 class="text-3xl font-bold text-center mb-10 tracking-tight">Mes compétences</h2>
+        <!-- Bloc à droite : mini carte profil -->
+        <div class="card-smooth p-5 space-y-4 text-sm relative z-10">
+          <p class="section-eyebrow">Tech & focus</p>
 
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+          <p class="opacity-80">
+            <span class="font-semibold">Stack principale :</span><br />
+            JavaScript, React, Astro, Python, Django, Tailwind.
+          </p>
 
-    {["Astro", "React", "Tailwind CSS", "JavaScript", "Node.js", "Python", "SQL", "Django"].map(item => (
-     <div class="p-4 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-center font-medium shadow-sm hover:shadow-md transform hover:-translate-y-1 transition-all">
-  {item}
-</div>
-    ))}
+          <p class="opacity-80">
+            <span class="font-semibold">Ce que je propose :</span><br />
+            Interfaces modernes, outils métiers sur mesure, refonte d’applications internes.
+          </p>
 
-  </div>
-</section>
+          <p class="opacity-70 text-xs">
+            Inspiration visuelle : minimalisme japonais, contraste maîtrisé, couleurs douces et détails subtils. 🌸
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- COMPÉTENCES -->
+  <section class="py-16 border-t border-neutral-300/40 dark:border-neutral-700/40">
+    <div class="max-w-5xl mx-auto px-4 space-y-8">
+      <div class="text-center space-y-3">
+        <p class="section-eyebrow">Compétences</p>
+        <h2 class="text-3xl font-bold tracking-tight">Mes compétences</h2>
+        <p class="text-sm opacity-75 max-w-2xl mx-auto">
+          Une base solide en développement front-end et back-end, avec un focus particulier sur les interfaces modernes
+          et les outils métiers utiles au quotidien.
+        </p>
+      </div>
 
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        {skills.map((skill) => (
+          <div class="card-smooth p-3 text-center text-sm font-medium flex flex-col items-center gap-1">
+            <span class="text-xl">
+              {skill.icon}
+            </span>
+            <span>{skill.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
+  <!-- PROJETS -->
+  <section class="py-16 border-t border-neutral-300/40 dark:border-neutral-700/40">
+    <div class="max-w-5xl mx-auto px-4 space-y-8">
 
-<!-- PROJETS -->
-<section class="py-20 border-t border-neutral-300/40 dark:border-neutral-700/40">
-  <h2 class="text-3xl font-bold text-center mb-4">Mes projets</h2>
+      <div class="text-center space-y-3">
+        <p class="section-eyebrow">Projets</p>
+        <h2 class="text-3xl font-bold tracking-tight">Projets en avant</h2>
+        <p class="text-sm opacity-75 max-w-2xl mx-auto">
+          Quelques projets représentatifs de ma façon de travailler : applications internes, outils métiers et interfaces modernes.
+        </p>
+      </div>
 
-  <p class="text-center opacity-70">
-    La section projets arrive bientôt… 🚧
-  </p>
-</section>
+      {projets.length === 0 ? (
+        <p class="text-center opacity-70">
+          La section projets arrive bientôt… 🚧
+        </p>
+      ) : (
+        <div class="space-y-4">
+          {projets.map((projet) => (
+            <a
+              href={`/projets/${projet.slug}`}
+              class="block card-smooth p-5 space-y-2"
+            >
+              <div class="flex items-start justify-between gap-3">
+                <div class="space-y-1">
+                  <h3 class="text-lg font-semibold">
+                    {projet.data.title}
+                  </h3>
+                  {projet.data.description && (
+                    <p class="text-sm opacity-80">
+                      {projet.data.description}
+                    </p>
+                  )}
+                </div>
 
+                {projet.data.date && (
+                  <p class="text-xs opacity-60 whitespace-nowrap">
+                    {new Date(projet.data.date).toLocaleDateString("fr-FR", {
+                      year: "numeric",
+                      month: "short",
+                    })}
+                  </p>
+                )}
+              </div>
 
+              {projet.data.tech && Array.isArray(projet.data.tech) && (
+                <div class="flex flex-wrap gap-2 pt-1">
+                  {projet.data.tech.map((t) => (
+                    <span class="inline-flex items-center rounded-full border border-neutral-300/60 dark:border-neutral-700/60 px-2.5 py-0.5 text-[11px] uppercase tracking-wide opacity-80">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </a>
+          ))}
+        </div>
+      )}
 
-  <!-- CONTACT -->
+      <div class="text-center pt-4">
+        <a
+          href="/projets"
+          class="inline-flex items-center text-sm opacity-80 hover:opacity-100 link-soft-underline"
+        >
+          Voir tous les projets →
+        </a>
+      </div>
+    </div>
+  </section>
 
-<section class="py-20 border-t border-neutral-300/40 dark:border-neutral-700/40 text-center">
-  <h2 class="text-3xl font-bold mb-4">Envie de collaborer ?</h2>
+  <!-- CONTACT / CTA -->
+  <section class="py-16 border-t border-neutral-300/40 dark:border-neutral-700/40">
+    <div class="max-w-3xl mx-auto px-4 text-center space-y-4">
+      <p class="section-eyebrow">Contact</p>
+      <h2 class="text-3xl font-bold tracking-tight">Envie de collaborer ?</h2>
 
-  <p class="opacity-80 mb-8">Disponible pour des missions freelance ou la création d’applications modernes.</p>
+      <p class="opacity-80">
+        Je suis disponible pour des missions freelance, la création d’outils métiers ou l’accompagnement sur des projets web.
+      </p>
 
-  <a href="/contact"
-     class="px-8 py-4 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 shadow-sm transition">
-    Me contacter
-  </a>
-</section>
-
-
+      <div class="flex flex-wrap justify-center gap-3 pt-2">
+        <a href="/contact" class="btn-main">
+          Me contacter
+        </a>
+        <a
+          href="/services"
+          class="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium border border-neutral-300/70 dark:border-neutral-700/70 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
+        >
+          Voir mes services
+        </a>
+      </div>
+    </div>
+  </section>
 
 </BaseLayout>
+
+
+
 
