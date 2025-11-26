@@ -97,95 +97,98 @@ const skills = [
 
   <!-- COMPÉTENCES -->
   <section class="py-16 border-t border-neutral-300/40 dark:border-neutral-700/40">
-    <div class="max-w-5xl mx-auto px-4 space-y-8">
-      <div class="text-center space-y-3">
-        <p class="section-eyebrow">Compétences</p>
-        <h2 class="text-3xl font-bold tracking-tight">Mes compétences</h2>
-        <p class="text-sm opacity-75 max-w-2xl mx-auto">
-          Une base solide en développement front-end et back-end, avec un focus particulier sur les interfaces modernes
-          et les outils métiers utiles au quotidien.
-        </p>
-      </div>
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="section-shell px-6 py-8 md:px-8 md:py-10 space-y-8">
+        <div class="text-center space-y-3 relative z-10">
+          <p class="section-eyebrow">Compétences</p>
+          <h2 class="text-3xl font-bold tracking-tight">Mes compétences</h2>
+          <p class="text-sm opacity-75 max-w-2xl mx-auto">
+            Une base solide en développement front-end et back-end, avec un focus particulier sur les interfaces modernes
+            et les outils métiers utiles au quotidien.
+          </p>
+        </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-        {skills.map((skill) => (
-          <div class="card-smooth p-3 text-center text-sm font-medium flex flex-col items-center gap-1">
-            <span class="text-xl">
-              {skill.icon}
-            </span>
-            <span>{skill.label}</span>
-          </div>
-        ))}
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 relative z-10">
+          {skills.map((skill) => (
+            <div class="card-smooth p-3 text-center text-sm font-medium flex flex-col items-center gap-1">
+              <span class="text-xl">
+                {skill.icon}
+              </span>
+              <span>{skill.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
   <!-- PROJETS -->
   <section class="py-16 border-t border-neutral-300/40 dark:border-neutral-700/40">
-    <div class="max-w-5xl mx-auto px-4 space-y-8">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="section-shell px-6 py-8 md:px-8 md:py-10 space-y-8">
+        <div class="text-center space-y-3 relative z-10">
+          <p class="section-eyebrow">Projets</p>
+          <h2 class="text-3xl font-bold tracking-tight">Projets en avant</h2>
+          <p class="text-sm opacity-75 max-w-2xl mx-auto">
+            Quelques projets représentatifs de ma façon de travailler : applications internes, outils métiers et interfaces modernes.
+          </p>
+        </div>
 
-      <div class="text-center space-y-3">
-        <p class="section-eyebrow">Projets</p>
-        <h2 class="text-3xl font-bold tracking-tight">Projets en avant</h2>
-        <p class="text-sm opacity-75 max-w-2xl mx-auto">
-          Quelques projets représentatifs de ma façon de travailler : applications internes, outils métiers et interfaces modernes.
-        </p>
-      </div>
+        {projets.length === 0 ? (
+          <p class="text-center opacity-70 relative z-10">
+            La section projets arrive bientôt… 🚧
+          </p>
+        ) : (
+          <div class="space-y-4 relative z-10">
+            {projets.map((projet) => (
+              <a
+                href={`/projets/${projet.slug}`}
+                class="block card-smooth p-5 space-y-2"
+              >
+                <div class="flex items-start justify-between gap-3">
+                  <div class="space-y-1">
+                    <h3 class="text-lg font-semibold">
+                      {projet.data.title}
+                    </h3>
+                    {projet.data.description && (
+                      <p class="text-sm opacity-80">
+                        {projet.data.description}
+                      </p>
+                    )}
+                  </div>
 
-      {projets.length === 0 ? (
-        <p class="text-center opacity-70">
-          La section projets arrive bientôt… 🚧
-        </p>
-      ) : (
-        <div class="space-y-4">
-          {projets.map((projet) => (
-            <a
-              href={`/projets/${projet.slug}`}
-              class="block card-smooth p-5 space-y-2"
-            >
-              <div class="flex items-start justify-between gap-3">
-                <div class="space-y-1">
-                  <h3 class="text-lg font-semibold">
-                    {projet.data.title}
-                  </h3>
-                  {projet.data.description && (
-                    <p class="text-sm opacity-80">
-                      {projet.data.description}
+                  {projet.data.date && (
+                    <p class="text-xs opacity-60 whitespace-nowrap">
+                      {new Date(projet.data.date).toLocaleDateString("fr-FR", {
+                        year: "numeric",
+                        month: "short",
+                      })}
                     </p>
                   )}
                 </div>
 
-                {projet.data.date && (
-                  <p class="text-xs opacity-60 whitespace-nowrap">
-                    {new Date(projet.data.date).toLocaleDateString("fr-FR", {
-                      year: "numeric",
-                      month: "short",
-                    })}
-                  </p>
+                {projet.data.tech && Array.isArray(projet.data.tech) && (
+                  <div class="flex flex-wrap gap-2 pt-1">
+                    {projet.data.tech.map((t) => (
+                      <span class="inline-flex items-center rounded-full border border-neutral-300/60 dark:border-neutral-700/60 px-2.5 py-0.5 text-[11px] uppercase tracking-wide opacity-80">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 )}
-              </div>
+              </a>
+            ))}
+          </div>
+        )}
 
-              {projet.data.tech && Array.isArray(projet.data.tech) && (
-                <div class="flex flex-wrap gap-2 pt-1">
-                  {projet.data.tech.map((t) => (
-                    <span class="inline-flex items-center rounded-full border border-neutral-300/60 dark:border-neutral-700/60 px-2.5 py-0.5 text-[11px] uppercase tracking-wide opacity-80">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </a>
-          ))}
+        <div class="text-center pt-4 relative z-10">
+          <a
+            href="/projets"
+            class="inline-flex items-center text-sm opacity-80 hover:opacity-100 link-soft-underline"
+          >
+            Voir tous les projets →
+          </a>
         </div>
-      )}
-
-      <div class="text-center pt-4">
-        <a
-          href="/projets"
-          class="inline-flex items-center text-sm opacity-80 hover:opacity-100 link-soft-underline"
-        >
-          Voir tous les projets →
-        </a>
       </div>
     </div>
   </section>
@@ -215,6 +218,7 @@ const skills = [
   </section>
 
 </BaseLayout>
+
 
 
 

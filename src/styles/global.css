@@ -21,9 +21,12 @@ body {
 .dark body {
   @apply bg-neutral-950;
   background-image:
-    radial-gradient(circle at 0% 0%, rgba(148, 163, 184, 0.28), transparent 55%),
-    radial-gradient(circle at 100% 100%, rgba(30, 64, 175, 0.35), transparent 55%);
+    radial-gradient(circle at 0% 0%, rgba(148, 163, 184, 0.18), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(30, 64, 175, 0.15), transparent 55%);
+  background-attachment: fixed;
+  background-size: cover;
 }
+
 
 /* Animation fade-up pour les sections (ex: hero) */
 @keyframes fade-up {
@@ -41,6 +44,16 @@ body {
   animation: fade-up 0.6s ease-out both;
 }
 
+
+
+
+/* header */ 
+
+header {
+  position: static;
+}
+
+
 /* Hero shell avec léger fond japonisant */
 .hero-shell {
   @apply relative overflow-hidden rounded-3xl border border-neutral-200/70 dark:border-neutral-800/70
@@ -55,10 +68,40 @@ body {
   inset: -40px;
   background-image:
     radial-gradient(circle at 0% 0%, rgba(251, 113, 133, 0.10), transparent 55%),
-    radial-gradient(circle at 100% 100%, rgba(248, 113, 113, 0.10), transparent 55%);
+    radial-gradient(circle at 100% 100%, rgba(248, 113, 113, 0.08), transparent 55%);
   pointer-events: none;
-  opacity: 0.7;
+  opacity: 0.4;
 }
+
+
+/* Section shell avec motif léger type seigaiha (utilisé pour compétences / projets…) */
+.section-shell {
+  @apply relative overflow-hidden rounded-3xl border border-neutral-200/70 dark:border-neutral-800/70
+    bg-white/90 dark:bg-neutral-950/85 shadow-sm backdrop-blur;
+}
+
+
+.section-shell::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  background-image:
+    radial-gradient(circle at 0% 0%, rgba(251, 113, 133, 0.20), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(244, 114, 182, 0.18), transparent 55%);
+  background-size: 45% 45%, 45% 45%;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+
+
+.dark .section-shell::before {
+  opacity: 0.35;
+  background-image:
+    radial-gradient(circle at 0% 0%, rgba(251, 113, 133, 0.22), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(129, 140, 248, 0.25), transparent 55%);
+}
+
 
 /* Bouton principal */
 .btn-main {
@@ -73,12 +116,13 @@ body {
 
 /* Carte “smooth” utilisée pour projets / services / blocs importants */
 .card-smooth {
-  @apply rounded-2xl border border-neutral-200/80 dark:border-neutral-800
-    bg-white/90 dark:bg-neutral-900/90
+  @apply rounded-2xl border border-neutral-200/80 dark:border-neutral-700
+    bg-white/95 dark:bg-neutral-900
     shadow-sm backdrop-blur
     transition-transform transition-shadow duration-200
     hover:-translate-y-1 hover:shadow-xl;
 }
+
 
 /* Liens avec soulignement fluide au hover */
 .link-soft-underline {

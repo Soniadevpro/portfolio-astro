@@ -1,7 +1,59 @@
-<!DOCTYPE html><html lang="fr" class="min-h-screen bg-sakura/40 text-ink dark:bg-ink dark:text-neutral-50"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Application interne RATP T8 pour la gestion de planning et échanges d’horaires."><title>TramPlanner</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet"><meta name="font-display" content="swap"><link rel="stylesheet" href="/_astro/index.DB5E2ZqH.css"><script type="module">const r=document.getElementById("theme-toggle"),e=document.documentElement;function c(t){t==="dark"?e.classList.add("dark"):e.classList.remove("dark"),localStorage.setItem("theme",t)}function s(){return e.classList.contains("dark")?"dark":"light"}r?.addEventListener("click",()=>{const n=s()==="dark"?"light":"dark";c(n)});
-</script></head> <body class="min-h-screen transition-colors duration-300"> <header class="flex items-center justify-between px-6 py-4 border-b border-neutral-300/40 dark:border-neutral-800/60 backdrop-blur-sm bg-white/70 dark:bg-neutral-900/70"> <a href="/" class="font-semibold tracking-wide">Sabbahi Sonia</a> <nav class="flex items-center gap-4 text-sm"> <a href="/" class="opacity-80 hover:opacity-100 transition-opacity">Accueil</a> <a href="/projets" class="opacity-80 hover:opacity-100 transition-opacity">Projets</a> <a href="/services" class="opacity-80 hover:opacity-100 transition-opacity">Services</a> <a href="/a-propos" class="opacity-80 hover:opacity-100 transition-opacity">À propos</a> <a href="/contact" class="opacity-80 hover:opacity-100 transition-opacity">Contact</a> <button id="theme-toggle" class="ml-3 text-xs border border-neutral-300/70 dark:border-neutral-700 rounded-full px-3 py-1 opacity-80 hover:opacity-100 transition-all" type="button">
+<!DOCTYPE html><html lang="fr" class="min-h-screen text-ink dark:text-neutral-50"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Application interne moderne permettant la consultation du planning, les échanges entre agents et la gestion dédiée superviseur."><title>TramPlanner — Outil interne pour les agents du tramway T8 — Projets — Sabbahi Sonia</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet"><meta name="font-display" content="swap"><link rel="stylesheet" href="/_astro/index.BqQSOxbn.css"><script type="module">const r=document.getElementById("theme-toggle"),e=document.documentElement;function c(t){t==="dark"?e.classList.add("dark"):e.classList.remove("dark"),localStorage.setItem("theme",t)}function s(){return e.classList.contains("dark")?"dark":"light"}r?.addEventListener("click",()=>{const n=s()==="dark"?"light":"dark";c(n)});
+</script></head> <body class="min-h-screen flex flex-col transition-colors duration-300"> <header class="flex items-center justify-between px-6 py-4 border-b border-neutral-300/40 dark:border-neutral-800/60 backdrop-blur-sm bg-white/70 dark:bg-neutral-900/70"> <a href="/" class="font-semibold tracking-wide">Sabbahi Sonia</a> <nav class="flex items-center gap-4 text-sm"> <a href="/" class="opacity-80 hover:opacity-100 transition-opacity">Accueil</a> <a href="/projets" class="opacity-80 hover:opacity-100 transition-opacity">Projets</a> <a href="/services" class="opacity-80 hover:opacity-100 transition-opacity">Services</a> <a href="/a-propos" class="opacity-80 hover:opacity-100 transition-opacity">À propos</a> <a href="/contact" class="opacity-80 hover:opacity-100 transition-opacity">Contact</a> <button id="theme-toggle" class="ml-3 text-xs border border-neutral-300/70 dark:border-neutral-700 rounded-full px-3 py-1 opacity-80 hover:opacity-100 transition-all" type="button">
 🌙 / ☀️
-</button> </nav>  </header> <main class="max-w-3xl mx-auto px-4 py-10">  <section class="py-16 max-w-4xl mx-auto animate-fade-up px-4"> <!-- Titre + sous-titre --> <h1 class="text-4xl font-bold text-center mb-2">TramPlanner</h1> <p class="text-center text-gray-600 dark:text-gray-300 mb-8">Année : 2025</p> <!-- Image -->  <!-- Technologies --> <div class="flex justify-center gap-2 mb-6"> <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full"> React </span><span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full"> Django REST Framework </span><span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full"> Tailwind </span><span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full"> Docker </span> </div> <!-- Boutons --> <div class="flex justify-center gap-4 mb-12">   </div> <!-- 🔥 Contenu Markdown rendu --> <div class="prose prose-neutral dark:prose-invert max-w-none"> <p>Application interne pour les agents du tramway T8, avec interface superviseur, échanges de créneaux et planning lisible.</p> </div> </section>  </main> <footer class="mt-16 border-t border-neutral-200/70 dark:border-neutral-800/70 bg-neutral-50/60 dark:bg-neutral-950/60"> <div class="max-w-5xl mx-auto px-4 py-8 md:py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between"> <!-- Bloc gauche : identité --> <div class="space-y-1"> <p class="text-sm font-semibold tracking-wide uppercase opacity-80">
+</button> </nav>  </header> <main class="flex-1 max-w-6xl md:px-6 lg:px-8 mx-auto w-full">  <section class="py-16 md:py-24 max-w-3xl mx-auto px-4 space-y-10"> <!-- RETOUR --> <div> <a href="/projets" class="text-sm opacity-70 hover:opacity-100 link-soft-underline inline-flex items-center gap-1">
+← Retour aux projets
+</a> </div> <!-- EN-TÊTE DU PROJET --> <header class="space-y-3"> <p class="text-xs uppercase tracking-[0.2em] opacity-60">
+Projet
+</p> <h1 class="text-3xl font-bold"> TramPlanner — Outil interne pour les agents du tramway T8 </h1> <p class="text-base opacity-80 max-w-2xl"> Application interne moderne permettant la consultation du planning, les échanges entre agents et la gestion dédiée superviseur. </p> <div class="flex flex-wrap items-center gap-3 text-xs opacity-70 pt-2"> <span> mars 2025 </span>  <span>•</span> <span>Client : RATP T8 — Projet réel</span>   <span>•</span> <span>Soutenance TP Concepteur Développeur d’Applications</span>  </div> <div class="flex flex-wrap gap-2 pt-3"> <span class="inline-flex items-center rounded-full border border-neutral-300/60 dark:border-neutral-700/60 px-2.5 py-0.5 text-[11px] uppercase tracking-wide opacity-80"> React </span><span class="inline-flex items-center rounded-full border border-neutral-300/60 dark:border-neutral-700/60 px-2.5 py-0.5 text-[11px] uppercase tracking-wide opacity-80"> Django REST </span><span class="inline-flex items-center rounded-full border border-neutral-300/60 dark:border-neutral-700/60 px-2.5 py-0.5 text-[11px] uppercase tracking-wide opacity-80"> Tailwind </span><span class="inline-flex items-center rounded-full border border-neutral-300/60 dark:border-neutral-700/60 px-2.5 py-0.5 text-[11px] uppercase tracking-wide opacity-80"> SQLite </span><span class="inline-flex items-center rounded-full border border-neutral-300/60 dark:border-neutral-700/60 px-2.5 py-0.5 text-[11px] uppercase tracking-wide opacity-80"> Docker </span> </div>  </header> <!-- CONTENU MARKDOWN --> <article class="prose prose-neutral dark:prose-invert prose-sm sm:prose-base max-w-none"> <p>TramPlanner est une application interne destinée aux agents du tramway T8 de la RATP.<br>
+Son objectif : <strong>moderniser un outil vieillissant</strong> tout en facilitant le quotidien des équipes terrain.</p>
+<h2 id="-objectifs-du-projet">🎯 Objectifs du projet</h2>
+<ul>
+<li>Offrir une interface claire, simple et moderne aux agents.</li>
+<li>Permettre les <strong>échanges de créneaux</strong> entre agents avec validation superviseur.</li>
+<li>Donner aux superviseurs une vision globale du planning collectif.</li>
+<li>Intégrer une <strong>messagerie interne</strong>, un forum et un espace de communication.</li>
+<li>Préparer une architecture permettant une évolution future vers mobile.</li>
+</ul>
+<hr>
+<h2 id="️-fonctionnalités-principales">🛠️ Fonctionnalités principales</h2>
+<h3 id="-côté-agents">👥 Côté agents</h3>
+<ul>
+<li>Consultation du planning collectif.</li>
+<li>Demande d’échange d’un créneau vers un autre agent.</li>
+<li>Notification lorsque la demande est acceptée ou refusée.</li>
+<li>Profil agent : avatar, informations internes, historique.</li>
+</ul>
+<h3 id="-côté-superviseur">🧩 Côté superviseur</h3>
+<ul>
+<li>Vue globale sur l’équipe complète.</li>
+<li>Gestion des demandes d’échange en attente.</li>
+<li>Interface dédiée pour validation / refus.</li>
+<li>Gestion simplifiée par journée, agent ou créneau.</li>
+</ul>
+<hr>
+<h2 id="-ux--ui">🎨 UX &#x26; UI</h2>
+<p>L’interface suit les principes :</p>
+<ul>
+<li>minimaliste,</li>
+<li>lisible,</li>
+<li>pensée pour être utilisée rapidement sur le terrain,</li>
+<li>inspirée des couleurs RATP (vert + gris).</li>
+</ul>
+<hr>
+<h2 id="️-architecture-technique">⚙️ Architecture technique</h2>
+<ul>
+<li><strong>Frontend</strong> : React.js + Tailwind CSS</li>
+<li><strong>Backend</strong> : Django REST Framework</li>
+<li><strong>Base de données</strong> : SQLite</li>
+<li><strong>Déploiement prévu</strong> : Docker + VPS</li>
+<li><strong>Routing</strong> : REST complet avec endpoints sécurisés</li>
+<li><strong>Stockage utilisateurs</strong> : comptes réels créés dans Django Admin</li>
+</ul>
+<hr>
+<h2 id="-résultat">🚀 Résultat</h2>
+<p>TramPlanner modernise un outil essentiel à la coordination des équipes du T8.<br>
+Le projet met en avant mes compétences en <strong>conception multicouche, modélisation, UX/UI, et communication entre frontend et backend</strong>.</p> </article> </section>  </main> <footer class="mt-16 border-t border-neutral-200/70 dark:border-neutral-800/70 bg-neutral-50/60 dark:bg-neutral-950/60"> <div class="max-w-5xl mx-auto px-4 py-8 md:py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between"> <!-- Bloc gauche : identité --> <div class="space-y-1"> <p class="text-sm font-semibold tracking-wide uppercase opacity-80">
 Sabbahi Sonia
 </p> <p class="text-sm opacity-70">
 Conceptrice développeuse d’applications — Frontend & Backend

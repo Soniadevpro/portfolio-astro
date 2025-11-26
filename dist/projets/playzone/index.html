@@ -1,26 +1,67 @@
-<!DOCTYPE html><html lang="fr" class="min-h-screen bg-sakura/40 text-ink dark:bg-ink dark:text-neutral-50"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Plateforme de tournois en ligne"><title>PlayZone</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet"><meta name="font-display" content="swap"><link rel="stylesheet" href="/_astro/index.DB5E2ZqH.css"><script type="module">const r=document.getElementById("theme-toggle"),e=document.documentElement;function c(t){t==="dark"?e.classList.add("dark"):e.classList.remove("dark"),localStorage.setItem("theme",t)}function s(){return e.classList.contains("dark")?"dark":"light"}r?.addEventListener("click",()=>{const n=s()==="dark"?"light":"dark";c(n)});
-</script></head> <body class="min-h-screen transition-colors duration-300"> <header class="flex items-center justify-between px-6 py-4 border-b border-neutral-300/40 dark:border-neutral-800/60 backdrop-blur-sm bg-white/70 dark:bg-neutral-900/70"> <a href="/" class="font-semibold tracking-wide">Sabbahi Sonia</a> <nav class="flex items-center gap-4 text-sm"> <a href="/" class="opacity-80 hover:opacity-100 transition-opacity">Accueil</a> <a href="/projets" class="opacity-80 hover:opacity-100 transition-opacity">Projets</a> <a href="/services" class="opacity-80 hover:opacity-100 transition-opacity">Services</a> <a href="/a-propos" class="opacity-80 hover:opacity-100 transition-opacity">À propos</a> <a href="/contact" class="opacity-80 hover:opacity-100 transition-opacity">Contact</a> <button id="theme-toggle" class="ml-3 text-xs border border-neutral-300/70 dark:border-neutral-700 rounded-full px-3 py-1 opacity-80 hover:opacity-100 transition-all" type="button">
+<!DOCTYPE html><html lang="fr" class="min-h-screen text-ink dark:text-neutral-50"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Application web permettant l’organisation, l’inscription et la gestion de tournois de jeux vidéo."><title>PlayZone — Plateforme de tournois e-sport — Projets — Sabbahi Sonia</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet"><meta name="font-display" content="swap"><link rel="stylesheet" href="/_astro/index.BqQSOxbn.css"><script type="module">const r=document.getElementById("theme-toggle"),e=document.documentElement;function c(t){t==="dark"?e.classList.add("dark"):e.classList.remove("dark"),localStorage.setItem("theme",t)}function s(){return e.classList.contains("dark")?"dark":"light"}r?.addEventListener("click",()=>{const n=s()==="dark"?"light":"dark";c(n)});
+</script></head> <body class="min-h-screen flex flex-col transition-colors duration-300"> <header class="flex items-center justify-between px-6 py-4 border-b border-neutral-300/40 dark:border-neutral-800/60 backdrop-blur-sm bg-white/70 dark:bg-neutral-900/70"> <a href="/" class="font-semibold tracking-wide">Sabbahi Sonia</a> <nav class="flex items-center gap-4 text-sm"> <a href="/" class="opacity-80 hover:opacity-100 transition-opacity">Accueil</a> <a href="/projets" class="opacity-80 hover:opacity-100 transition-opacity">Projets</a> <a href="/services" class="opacity-80 hover:opacity-100 transition-opacity">Services</a> <a href="/a-propos" class="opacity-80 hover:opacity-100 transition-opacity">À propos</a> <a href="/contact" class="opacity-80 hover:opacity-100 transition-opacity">Contact</a> <button id="theme-toggle" class="ml-3 text-xs border border-neutral-300/70 dark:border-neutral-700 rounded-full px-3 py-1 opacity-80 hover:opacity-100 transition-all" type="button">
 🌙 / ☀️
-</button> </nav>  </header> <main class="max-w-3xl mx-auto px-4 py-10">  <section class="py-16 max-w-4xl mx-auto animate-fade-up px-4"> <!-- Titre + sous-titre --> <h1 class="text-4xl font-bold text-center mb-2">PlayZone</h1> <p class="text-center text-gray-600 dark:text-gray-300 mb-8">Année : 2024</p> <!-- Image --> <img src="/images/playzone.png" alt="PlayZone" class="w-full rounded-xl shadow-md mx-auto mb-6"> <!-- Technologies --> <div class="flex justify-center gap-2 mb-6"> <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full"> Astro </span><span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full"> React </span><span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full"> Django </span> </div> <!-- Boutons --> <div class="flex justify-center gap-4 mb-12"> <a href="https://github.com/..." target="_blank" class="px-6 py-2 bg-black text-white rounded-xl hover:bg-gray-800 dark:bg-white dark:text-black">
-Voir le code
-</a> <a href="https://playzone.vercel.app" target="_blank" class="px-6 py-2 bg-pink-200 text-black rounded-xl dark:bg-pink-300">
-Voir la démo
-</a> </div> <!-- 🔥 Contenu Markdown rendu --> <div class="prose prose-neutral dark:prose-invert max-w-none"> <h1 id="présentation-du-projet">Présentation du projet</h1>
-<p>PlayZone est une plateforme permettant d’organiser, gérer et participer à des tournois esport.</p>
-<h2 id="objectifs">Objectifs</h2>
+</button> </nav>  </header> <main class="flex-1 max-w-6xl md:px-6 lg:px-8 mx-auto w-full">  <section class="py-16 md:py-24 max-w-3xl mx-auto px-4 space-y-10"> <!-- RETOUR --> <div> <a href="/projets" class="text-sm opacity-70 hover:opacity-100 link-soft-underline inline-flex items-center gap-1">
+← Retour aux projets
+</a> </div> <!-- EN-TÊTE DU PROJET --> <header class="space-y-3"> <p class="text-xs uppercase tracking-[0.2em] opacity-60">
+Projet
+</p> <h1 class="text-3xl font-bold"> PlayZone — Plateforme de tournois e-sport </h1> <p class="text-base opacity-80 max-w-2xl"> Application web permettant l’organisation, l’inscription et la gestion de tournois de jeux vidéo. </p> <div class="flex flex-wrap items-center gap-3 text-xs opacity-70 pt-2"> <span> janvier 2025 </span>  <span>•</span> <span>Client : Projet personnel / Portfolio</span>   <span>•</span> <span>Projet de formation GRETA Val-d’Oise</span>  </div> <div class="flex flex-wrap gap-2 pt-3"> <span class="inline-flex items-center rounded-full border border-neutral-300/60 dark:border-neutral-700/60 px-2.5 py-0.5 text-[11px] uppercase tracking-wide opacity-80"> Django </span><span class="inline-flex items-center rounded-full border border-neutral-300/60 dark:border-neutral-700/60 px-2.5 py-0.5 text-[11px] uppercase tracking-wide opacity-80"> React </span><span class="inline-flex items-center rounded-full border border-neutral-300/60 dark:border-neutral-700/60 px-2.5 py-0.5 text-[11px] uppercase tracking-wide opacity-80"> PostgreSQL </span><span class="inline-flex items-center rounded-full border border-neutral-300/60 dark:border-neutral-700/60 px-2.5 py-0.5 text-[11px] uppercase tracking-wide opacity-80"> Tailwind </span><span class="inline-flex items-center rounded-full border border-neutral-300/60 dark:border-neutral-700/60 px-2.5 py-0.5 text-[11px] uppercase tracking-wide opacity-80"> EJS </span><span class="inline-flex items-center rounded-full border border-neutral-300/60 dark:border-neutral-700/60 px-2.5 py-0.5 text-[11px] uppercase tracking-wide opacity-80"> MongoDB </span> </div>  </header> <!-- CONTENU MARKDOWN --> <article class="prose prose-neutral dark:prose-invert prose-sm sm:prose-base max-w-none"> <p>PlayZone est une plateforme web dédiée aux joueurs et organisateurs de tournois de jeux vidéo,<br>
+mêlant <strong>compétition</strong>, <strong>communauté</strong> et <strong>simplicité d’utilisation</strong>.</p>
+<h2 id="-objectifs-du-projet">🎮 Objectifs du projet</h2>
 <ul>
-<li>Gestion des tournois</li>
-<li>Inscription des joueurs</li>
-<li>Interface admin</li>
-<li>Sécurité renforcée</li>
+<li>Permettre aux organisateurs de créer et gérer leurs tournois.</li>
+<li>Offrir aux joueurs une interface simple pour s’inscrire.</li>
+<li>Gérer les matchs, scores, gagnants et classement.</li>
+<li>Permettre la distinction entre tournois <strong>en ligne</strong> et <strong>en présentiel</strong>.</li>
+<li>Intégrer ultérieurement les paiements et les récompenses.</li>
 </ul>
-<h2 id="fonctionnalités">Fonctionnalités</h2>
-<ol>
-<li>Création de tournoi</li>
-<li>Inscription en ligne</li>
-<li>Tableau des matchs</li>
-<li>Système d’annonces</li>
-</ol> </div> </section>  </main> <footer class="mt-16 border-t border-neutral-200/70 dark:border-neutral-800/70 bg-neutral-50/60 dark:bg-neutral-950/60"> <div class="max-w-5xl mx-auto px-4 py-8 md:py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between"> <!-- Bloc gauche : identité --> <div class="space-y-1"> <p class="text-sm font-semibold tracking-wide uppercase opacity-80">
+<hr>
+<h2 id="️-fonctionnalités">🛠️ Fonctionnalités</h2>
+<h3 id="-visiteurs">✨ Visiteurs</h3>
+<ul>
+<li>Accès libre à la liste des tournois.</li>
+<li>Page de détails : description, date, lieu/online, joueurs inscrits.</li>
+</ul>
+<h3 id="-joueurs-connectés">🧑‍💻 Joueurs connectés</h3>
+<ul>
+<li>Inscription aux tournois.</li>
+<li>Accès à leurs tournois, favoris, historique.</li>
+</ul>
+<h3 id="-organisateurs">👑 Organisateurs</h3>
+<ul>
+<li>Création complète des tournois.</li>
+<li>Ajout et gestion des participants.</li>
+<li>Enregistrement des résultats.</li>
+<li>Gestion du bracket et progression des matchs.</li>
+</ul>
+<hr>
+<h2 id="-architecture-technique">🔧 Architecture technique</h2>
+<ul>
+<li><strong>Backend</strong> : Django, API REST structurée</li>
+<li><strong>Frontend</strong> : React, pages dynamiques &#x26; composants réutilisables</li>
+<li><strong>Base de données</strong> : PostgreSQL</li>
+<li><strong>Sécurité des utilisateurs</strong> : rôle Organisateur / Joueur</li>
+<li><strong>Future évolution</strong> : système de paiement + version mobile</li>
+</ul>
+<hr>
+<h2 id="-design">🎨 Design</h2>
+<p>Design orienté gaming, moderne, avec :</p>
+<ul>
+<li>couleurs vives,</li>
+<li>section Hero dynamique,</li>
+<li>navigation optimisée,</li>
+<li>pages dédiées pour les tournois.</li>
+</ul>
+<hr>
+<h2 id="-résultat">🚀 Résultat</h2>
+<p>PlayZone est un projet complet qui démontre ma capacité à travailler :</p>
+<ul>
+<li>sur une architecture REST,</li>
+<li>avec un backend robuste,</li>
+<li>un frontend dynamique,</li>
+<li>et une authentification complète.<br>
+Un excellent showcase de mon travail en <strong>full-stack Django + React</strong>.</li>
+</ul> </article> </section>  </main> <footer class="mt-16 border-t border-neutral-200/70 dark:border-neutral-800/70 bg-neutral-50/60 dark:bg-neutral-950/60"> <div class="max-w-5xl mx-auto px-4 py-8 md:py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between"> <!-- Bloc gauche : identité --> <div class="space-y-1"> <p class="text-sm font-semibold tracking-wide uppercase opacity-80">
 Sabbahi Sonia
 </p> <p class="text-sm opacity-70">
 Conceptrice développeuse d’applications — Frontend & Backend

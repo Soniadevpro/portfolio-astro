@@ -1,9 +1,8 @@
 ---
 ---
-
-
-
-<header class="flex items-center justify-between px-6 py-4 border-b border-neutral-300/40 dark:border-neutral-800/60 backdrop-blur-sm bg-white/70 dark:bg-neutral-900/70">
+<header
+  class="sticky top-0 z-40 w-full flex items-center justify-between px-6 py-4 border-b border-neutral-300/40 dark:border-neutral-800/60 backdrop-blur-sm bg-white/80 dark:bg-neutral-900/80"
+>
   <a href="/" class="font-semibold tracking-wide">Sabbahi Sonia</a>
 
   <nav class="flex items-center gap-4 text-sm">
@@ -21,31 +20,38 @@
       🌙 / ☀️
     </button>
   </nav>
-
-  <script>
-    const btn = document.getElementById('theme-toggle');
-    const root = document.documentElement;
-
-    function setTheme(mode) {
-      if (mode === 'dark') {
-        root.classList.add('dark');
-      } else {
-        root.classList.remove('dark');
-      }
-      localStorage.setItem('theme', mode);
-    }
-
-    // État initial basé sur la classe actuelle
-    function getCurrentTheme() {
-      return root.classList.contains('dark') ? 'dark' : 'light';
-    }
-
-    btn?.addEventListener('click', () => {
-      const current = getCurrentTheme();
-      const next = current === 'dark' ? 'light' : 'dark';
-      setTheme(next);
-    });
-  </script>
 </header>
+
+<!-- Script inline compatible Astro -->
+<script is:inline>
+  const root = document.documentElement;
+  const body = document.body;
+
+  // --- Applique un thème global HTML + BODY ---
+  function applyTheme(mode) {
+    if (mode === "dark") {
+      root.classList.add("dark");
+      body.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+      body.classList.remove("dark");
+    }
+  }
+
+  // --- Récupération du thème stocké ---
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme) {
+    applyTheme(savedTheme);
+  }
+
+  // --- Toggle ---
+  document.getElementById("theme-toggle")?.addEventListener("click", () => {
+    const isDark = root.classList.contains("dark");
+    const next = isDark ? "light" : "dark";
+    applyTheme(next);
+    localStorage.setItem("theme", next);
+  });
+</script>
 
 
