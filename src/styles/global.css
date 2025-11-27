@@ -151,3 +151,41 @@ header {
     px-3 py-1 text-[11px] font-medium uppercase tracking-wide text-vermillion;
 }
 
+/* === Animations de révélation au scroll === */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px) scale(0.98);
+  filter: blur(3px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out,
+    filter 0.6s ease-out;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-up {
+  transform: translateY(20px) scale(0.98);
+}
+
+.reveal-left {
+  transform: translateX(-24px) scale(0.98);
+}
+
+.reveal-right {
+  transform: translateX(24px) scale(0.98);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+
+/* optionnel : léger overshoot au hover pour les cartes animées */
+.reveal-card-hover:hover {
+  transform: translateY(-6px) scale(1.01);
+  transition:
+    transform 0.25s ease-out,
+    box-shadow 0.25s ease-out;
+}

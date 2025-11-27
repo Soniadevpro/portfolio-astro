@@ -104,6 +104,42 @@ if (saved === "dark") {
         </div>
       </div>
     </footer>
+
+        <script is:inline>
+      if (typeof window !== "undefined") {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            }
+          },
+          {
+            threshold: 0.15,
+          }
+        );
+
+        // Stagger : on parcourt chaque groupe et on donne un délai différent
+        const groups = document.querySelectorAll("[data-reveal-group]");
+        groups.forEach((group) => {
+          const items = group.querySelectorAll(".reveal");
+          items.forEach((el, index) => {
+            const delay = index * 80; // 80ms entre chaque élément
+            el.style.setProperty("--reveal-delay", `${delay}ms`);
+            observer.observe(el);
+          });
+        });
+
+        // Éléments isolés
+        const singles = document.querySelectorAll(".reveal:not([data-reveal-item])");
+        singles.forEach((el) => observer.observe(el));
+      }
+    </script>
+  </body>
+</html>
+
   </body>
 </html>
 

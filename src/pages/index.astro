@@ -31,7 +31,7 @@ const skills = [
 <BaseLayout {title} {description}>
 
   <!-- HERO -->
-  <section class="py-16 md:py-24 max-w-4xl mx-auto px-4 animate-fade-up">
+   <section class="py-16 md:py-24 max-w-4xl mx-auto px-4 reveal reveal-up">
     <div class="hero-shell p-8 md:p-10">
       <div class="grid gap-10 md:grid-cols-[3fr,2fr] items-center">
 
@@ -96,9 +96,9 @@ const skills = [
   </section>
 
   <!-- COMPÉTENCES -->
-  <section class="py-16 border-t border-neutral-300/40 dark:border-neutral-700/40">
+    <section class="py-16 border-t border-neutral-300/40 dark:border-neutral-700/40">
     <div class="max-w-5xl mx-auto px-4">
-      <div class="section-shell px-6 py-8 md:px-8 md:py-10 space-y-8">
+      <div class="section-shell px-6 py-8 md:px-8 md:py-10 space-y-8 reveal reveal-up">
         <div class="text-center space-y-3 relative z-10">
           <p class="section-eyebrow">Compétences</p>
           <h2 class="text-3xl font-bold tracking-tight">Mes compétences</h2>
@@ -108,9 +108,12 @@ const skills = [
           </p>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 relative z-10">
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 relative z-10"
+          data-reveal-group
+        >
           {skills.map((skill) => (
-            <div class="card-smooth p-3 text-center text-sm font-medium flex flex-col items-center gap-1">
+            <div class="card-smooth p-3 text-center text-sm font-medium flex flex-col items-center gap-1 reveal reveal-up reveal-card-hover">
               <span class="text-xl">
                 {skill.icon}
               </span>
@@ -122,10 +125,11 @@ const skills = [
     </div>
   </section>
 
+
   <!-- PROJETS -->
-  <section class="py-16 border-t border-neutral-300/40 dark:border-neutral-700/40">
+ <section class="py-16 border-t border-neutral-300/40 dark:border-neutral-700/40">
     <div class="max-w-5xl mx-auto px-4">
-      <div class="section-shell px-6 py-8 md:px-8 md:py-10 space-y-8">
+      <div class="section-shell px-6 py-8 md:px-8 md:py-10 space-y-8 reveal reveal-up">
         <div class="text-center space-y-3 relative z-10">
           <p class="section-eyebrow">Projets</p>
           <h2 class="text-3xl font-bold tracking-tight">Projets en avant</h2>
@@ -139,11 +143,11 @@ const skills = [
             La section projets arrive bientôt… 🚧
           </p>
         ) : (
-          <div class="space-y-4 relative z-10">
+          <div class="space-y-4 relative z-10" data-reveal-group>
             {projets.map((projet) => (
               <a
                 href={`/projets/${projet.slug}`}
-                class="block card-smooth p-5 space-y-2"
+                class="block card-smooth p-5 space-y-2 reveal reveal-up reveal-card-hover"
               >
                 <div class="flex items-start justify-between gap-3">
                   <div class="space-y-1">
@@ -181,7 +185,7 @@ const skills = [
           </div>
         )}
 
-        <div class="text-center pt-4 relative z-10">
+          <div class="text-center pt-4 relative z-10 reveal reveal-up" data-reveal-item>
           <a
             href="/projets"
             class="inline-flex items-center text-sm opacity-80 hover:opacity-100 link-soft-underline"
